@@ -14,10 +14,10 @@ std::string const LoggerLevelsAsText[]{
 };
 }
 
-std::string const& logger::logLevelAsText(LogLevel level)
+std::string const& logger::logLevelAsText(LogLevel logLevel)
 {
-  assert(static_cast<int>(level) >= 0 && level < LogLevel::NumberOfEnums);
-  return LoggerLevelsAsText[static_cast<int>(level)];
+  assert(static_cast<int>(logLevel) >= 0 && logLevel < LogLevel::NumberOfEnums);
+  return LoggerLevelsAsText[static_cast<int>(logLevel)];
 }
 
 logger::LoggerInterface* logger::LoggerInterface::getLogger()

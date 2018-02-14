@@ -16,7 +16,7 @@ enum class LogLevel
   error,
   NumberOfEnums,
 };
-std::string const& logLevelAsText(LogLevel l);
+std::string const& logLevelAsText(LogLevel logLevel);
 
 class LoggerInterface
 {
