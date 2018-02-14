@@ -6,6 +6,6 @@
 
 namespace logger
 {
-    LoggerInterface* getOutputLogger();
-    LoggerInterface* getDatabaseLogger(std::shared_ptr<sqlite::database>& db);
-}
+LoggerInterface* getOutputLogger();
+LoggerInterface* getDatabaseLogger(std::shared_ptr<sqlite::database>& db);
+}  // namespace logger
