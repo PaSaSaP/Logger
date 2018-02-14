@@ -15,7 +15,7 @@ void logger::DatabaseLogger::log(logger::LogLevel level,
       << logger::logLevelAsText(level) << file << line << func << msg;
 }
 
-logger::DatabaseLogger::DatabaseLogger(std::shared_ptr<sqlite::database>& db)
+logger::DatabaseLogger::DatabaseLogger(std::shared_ptr<sqlite::database> const& db)
     : database(db)
 {
   assert(nullptr != database.get());

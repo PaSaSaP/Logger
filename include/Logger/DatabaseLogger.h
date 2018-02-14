@@ -14,9 +14,9 @@ class DatabaseLogger : public LoggerInterface
   void log(LogLevel level, std::string const& file, std::string const& func,
            long long line, std::string const& msg) override;
 
-  explicit DatabaseLogger(std::shared_ptr<sqlite::database>& db);
+  explicit DatabaseLogger(std::shared_ptr<sqlite::database> const& db);
 
  private:
-  std::shared_ptr<sqlite::database> database;
+  std::shared_ptr<sqlite::database> const database;
 };
 }  // namespace logger
