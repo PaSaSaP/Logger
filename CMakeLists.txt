@@ -50,3 +50,6 @@ if(DEVELOPER_TOOLS)
     ${CMAKE_PROJECT_NAME})
 endif(DEVELOPER_TOOLS)
 
+enable_testing()
+add_subdirectory(tests)
+
