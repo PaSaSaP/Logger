@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.6)
 project(logger-tests)
 
-enable_testing()
 set(CMAKE_CXX_STANDARD 14)
 find_package(GTest REQUIRED)
 
