@@ -51,5 +51,6 @@ if(DEVELOPER_TOOLS)
 endif(DEVELOPER_TOOLS)
 
 enable_testing()
+include(CTest)
 add_subdirectory(tests)
 
