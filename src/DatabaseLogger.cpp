@@ -21,11 +21,6 @@ logger::DatabaseLogger::DatabaseLogger(
 {
   assert(nullptr != database.get());
   *database << "create table if not exists logs ("
-               "   _id integer primary key autoincrement not null,"
-               "   level text,"
-               "   file text,"
-               "   line int,"
-               "   func text,"
-               "   msg func"
-               ");";
+               "_id integer primary key autoincrement not null, "
+               "level text, file text, line int, func text, msg func);";
 }
