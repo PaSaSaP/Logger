@@ -72,3 +72,12 @@ enable_testing()
 include(CTest)
 add_subdirectory(tests)
 
+install(TARGETS ${CMAKE_PROJECT_NAME}
+  LIBRARY DESTINATION lib
+  )
+install(DIRECTORY include/Logger
+  DESTINATION include
+  FILES_MATCHING PATTERN "*.h"
+  )
+include(CPack)
+
