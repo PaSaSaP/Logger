@@ -38,7 +38,12 @@ add_custom_target(sqlite_modern_cpp
   )
 
 # Project files.
-file(GLOB_RECURSE SOURCE_FILES "*.cpp" "*.h")
+set(SOURCE_FILES
+  ${CMAKE_SOURCE_DIR}/src/DatabaseLogger.cpp
+  ${CMAKE_SOURCE_DIR}/src/LoggerInterface.cpp
+  ${CMAKE_SOURCE_DIR}/src/loggers.cpp
+  ${CMAKE_SOURCE_DIR}/src/OutputLogger.cpp
+  )
 
 # Create library.
 add_library(${CMAKE_PROJECT_NAME} SHARED ${SOURCE_FILES})
