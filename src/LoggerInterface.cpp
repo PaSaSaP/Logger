@@ -2,9 +2,9 @@
 #include <memory>
 #include <string>
 
-#include "Logger/LoggerInterface.h"
+#include "PsspLogger/LoggerInterface.h"
 
-std::unique_ptr<logger::LoggerInterface> logger::LoggerInterface::logger{
+std::unique_ptr<pssplogger::LoggerInterface> pssplogger::LoggerInterface::pssplogger{
     nullptr};
 
 namespace
@@ -14,30 +14,30 @@ std::string const LoggerLevelsAsText[]{
 };
 }
 
-std::string const& logger::logLevelAsText(LogLevel logLevel)
+std::string const& pssplogger::logLevelAsText(LogLevel logLevel)
 {
   assert(static_cast<int>(logLevel) >= 0 && logLevel < LogLevel::NumberOfEnums);
   return LoggerLevelsAsText[static_cast<int>(logLevel)];
 }
 
-logger::LoggerInterface* logger::LoggerInterface::getLogger()
+pssplogger::LoggerInterface* pssplogger::LoggerInterface::getLogger()
 {
-  return LoggerInterface::logger.get();
+  return LoggerInterface::pssplogger.get();
 }
 
-void logger::LoggerInterface::setLogger(LoggerInterface* logger)
+void pssplogger::LoggerInterface::setLogger(LoggerInterface* pssplogger)
 {
-  LoggerInterface::logger.reset(logger);
+  LoggerInterface::pssplogger.reset(pssplogger);
 }
 
-std::ostream& logger::LoggerEvent::getStream() { return ostr; }
+std::ostream& pssplogger::LoggerEvent::getStream() { return ostr; }
 
-logger::LoggerEvent::LoggerEvent(LogLevel level, std::string const& file,
+pssplogger::LoggerEvent::LoggerEvent(LogLevel level, std::string const& file,
                                  std::string const& func, long long line)
     : level(level), file(file), func(func), line(line)
 {
 }
-logger::LoggerEvent::~LoggerEvent()
+pssplogger::LoggerEvent::~LoggerEvent()
 {
   LoggerInterface::getLogger()->log(level, file, func, line, ostr.str());
 }

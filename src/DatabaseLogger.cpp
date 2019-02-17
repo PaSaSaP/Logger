@@ -3,19 +3,19 @@
 
 #include "sqlite_modern_cpp.h"
 
-#include "Logger/DatabaseLogger.h"
+#include "PsspLogger/DatabaseLogger.h"
 
-void logger::DatabaseLogger::log(logger::LogLevel level,
+void pssplogger::DatabaseLogger::log(pssplogger::LogLevel level,
                                  std::string const& file,
                                  std::string const& func, long long line,
                                  std::string const& msg)
 {
   *database
       << "insert into logs (level, file, line, func, msg) values (?,?,?,?,?);"
-      << logger::logLevelAsText(level) << file << line << func << msg;
+      << pssplogger::logLevelAsText(level) << file << line << func << msg;
 }
 
-logger::DatabaseLogger::DatabaseLogger(
+pssplogger::DatabaseLogger::DatabaseLogger(
     std::shared_ptr<sqlite::database> const& db)
     : database(db)
 {

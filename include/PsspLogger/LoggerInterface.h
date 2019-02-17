@@ -5,7 +5,7 @@
 #include <sstream>
 #include <string>
 
-namespace logger
+namespace pssplogger
 {
 enum class LogLevel
 {
@@ -27,10 +27,10 @@ class LoggerInterface
                    std::string const& func, long long line,
                    std::string const& msg) = 0;
   static LoggerInterface* getLogger();
-  static void setLogger(LoggerInterface* logger);
+  static void setLogger(LoggerInterface* pssplogger);
 
  private:
-  static std::unique_ptr<LoggerInterface> logger;
+  static std::unique_ptr<LoggerInterface> pssplogger;
 };
 
 class LoggerEvent
@@ -49,7 +49,7 @@ class LoggerEvent
   unsigned line;
   std::ostringstream ostr;
 };
-}  // namespace logger
+}  // namespace pssplogger
 
 #define LOG(level) \
-  logger::LoggerEvent{(level), __FILE__, __func__, __LINE__}.getStream()
+  pssplogger::LoggerEvent{(level), __FILE__, __func__, __LINE__}.getStream()

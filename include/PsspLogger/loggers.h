@@ -2,10 +2,10 @@
 
 #include "sqlite_modern_cpp.h"
 
-#include "Logger/LoggerInterface.h"
+#include "PsspLogger/LoggerInterface.h"
 
-namespace logger
+namespace pssplogger
 {
 LoggerInterface* getOutputLogger();
 LoggerInterface* getDatabaseLogger(std::shared_ptr<sqlite::database>& db);
-}  // namespace logger
+}  // namespace pssplogger

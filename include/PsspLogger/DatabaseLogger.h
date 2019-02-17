@@ -4,9 +4,9 @@
 
 #include "sqlite_modern_cpp.h"
 
-#include "Logger/LoggerInterface.h"
+#include "PsspLogger/LoggerInterface.h"
 
-namespace logger
+namespace pssplogger
 {
 class DatabaseLogger : public LoggerInterface
 {
@@ -19,4 +19,4 @@ class DatabaseLogger : public LoggerInterface
  private:
   std::shared_ptr<sqlite::database> const database;
 };
-}  // namespace logger
+}  // namespace pssplogger

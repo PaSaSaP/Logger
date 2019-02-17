@@ -1,9 +1,9 @@
 #include <sstream>
 #include <string>
 
-#include "Logger/OutputLogger.h"
+#include "PsspLogger/OutputLogger.h"
 
-void logger::OutputLogger::log(LogLevel level, std::string const& file,
+void pssplogger::OutputLogger::log(LogLevel level, std::string const& file,
                                std::string const& func, long long line,
                                std::string const& msg)
 {

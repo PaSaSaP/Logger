@@ -75,7 +75,7 @@ add_subdirectory(tests)
 install(TARGETS ${CMAKE_PROJECT_NAME}
   LIBRARY DESTINATION lib
   )
-install(DIRECTORY include/Logger
+install(DIRECTORY include/PsspLogger
   DESTINATION include
   FILES_MATCHING PATTERN "*.h"
   )

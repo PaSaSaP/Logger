@@ -4,9 +4,9 @@
 #include <sstream>
 #include <string>
 
-#include "Logger/LoggerInterface.h"
+#include "PsspLogger/LoggerInterface.h"
 
-namespace logger
+namespace pssplogger
 {
 class OutputLogger : public LoggerInterface
 {
@@ -14,4 +14,4 @@ class OutputLogger : public LoggerInterface
   void log(LogLevel level, std::string const& file, std::string const& func,
            long long line, std::string const& msg) override;
 };
-}  // namespace logger
+}  // namespace pssplogger
